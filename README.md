@@ -77,7 +77,7 @@ Applied during training to improve generalization:
 │   └── technical_report.pdf
 │
 └── README.md
-text```
+```
 ---
 
 ## Installation and Requirements
@@ -88,17 +88,19 @@ text```
 ### Required Libraries
 ```bash
 pip install tensorflow numpy pandas matplotlib seaborn scikit-learn opencv-python
-
+```
 ---
 
 ## Usage
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/marine-species-classification.git
-
-2. Navigate to the project directory: cd marine-species-classification
-
+git clone https://github.com/your-username/marine-species-classification.git
+```
+2. Navigate to the project directory:
+```bash
+cd marine-species-classification
+```
 3. Execute the Jupyter notebooks in the notebooks/ directory sequentially to train the model, perform test-time augmentation evaluation, and analyze results.
 
 ---

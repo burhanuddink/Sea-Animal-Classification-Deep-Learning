@@ -118,7 +118,7 @@ The easiest way to try the app is using GitHub Codespaces.
 2. Select the **Codespaces** tab and click **"Create codespace on main"**.
 3. Wait for the terminal to load, then run these two commands:
    ```bash
-   pip install -r requirements.txt
+   pip install -r Requirements.txt
    python app.py
    ```
 Click "Open in Browser": When the app starts, a **popup** will appear in the bottom-right corner saying "Your application running on port 7860 is available." Click the Open in Browser button to use the app. If you don't see any popup, you can just copy the url saying: **"Running on local URL"**

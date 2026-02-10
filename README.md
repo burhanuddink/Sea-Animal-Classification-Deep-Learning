@@ -135,7 +135,7 @@ cd Sea-Animal-Classification-Deep-Learning
 2. Install dependencies: Make sure you have Python 3.11 installed.
 
 ```bash
-pip install -r requirements.txt
+pip install -r Requirements.txt
 ```
 
 3. Run the application:

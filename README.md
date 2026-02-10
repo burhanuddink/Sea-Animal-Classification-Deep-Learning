@@ -77,3 +77,45 @@ Applied during training to improve generalization:
 │   └── technical_report.pdf
 │
 └── README.md
+
+---
+
+## Installation and Requirements
+
+### Python Version
+- Python 3.x
+
+### Required Libraries
+```bash
+pip install tensorflow numpy pandas matplotlib seaborn scikit-learn opencv-python
+
+---
+
+## Usage
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/marine-species-classification.git
+
+2. Navigate to the project directory: cd marine-species-classification
+
+3. Execute the Jupyter notebooks in the notebooks/ directory sequentially to train the model, perform test-time augmentation evaluation, and analyze results.
+
+---
+
+## Future Improvements
+
+- Extend the model to finer-grained marine species classification
+- Experiment with newer architectures such as EfficientNetV2 or Vision Transformers
+- Deploy the trained model as a lightweight inference API or web application
+- Integrate attention mechanisms to improve feature localization
+
+---
+
+## Acknowledgements
+
+- EfficientNet architecture by Google Research
+- ImageNet pre-trained weights
+- TensorFlow and the open-source deep learning ecosystem
+
+---

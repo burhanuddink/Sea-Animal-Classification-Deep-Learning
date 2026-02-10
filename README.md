@@ -83,7 +83,7 @@ Applied during training to improve generalization:
 ## Installation and Requirements
 
 ### Python Version
-- Python 3.x
+- Python 3.11
 
 ### Required Libraries
 ```bash
@@ -93,27 +93,42 @@ pip install tensorflow numpy pandas matplotlib seaborn scikit-learn opencv-pytho
 
 ## Real-Time Demo
 
-This project includes a fully functional web interface built with **Gradio**. You can upload any image of a sea animal, and the EfficientNet model will classify it in real-time with confidence scores.
+This project includes a fully functional web interface built with **Gradio**. You can upload any image of a sea animal, and the EfficientNet model will classify it in real-time.
 
-### How to Run Locally
-To test the model on your own machine, follow these steps:
+### Option 1: Run in the Cloud (No Installation Required)
+The easiest way to try the app is using GitHub Codespaces.
 
-1. **Clone the repository:**
+1. Click the **Code** button at the top of this repository.
+2. Select the **Codespaces** tab and click **"Create codespace on main"**.
+3. Wait for the terminal to load, then run these two commands:
    ```bash
-   git clone [https://github.com/burhanuddink/Sea-Animal-Classification-Deep-Learning.git](https://github.com/burhanuddink/Sea-Animal-Classification-Deep-Learning.git)
-   cd Sea-Animal-Classification-Deep-Learning
+   pip install -r requirements.txt
+   python app.py
+   ```
+Click "Open in Browser": When the app starts, a **popup** will appear in the bottom-right corner saying "Your application running on port 7860 is available." Click the Open in Browser button to use the app. If you don't see any popup, you can just copy the url saying: **"Running on local URL"**
 
-Install dependencies: Make sure you have Python 3.11 installed.
+### Option 2: Run Locally
+If you prefer to run it on your own machine:
+
+1. Clone the repository:
+
+```bash
+git clone [https://github.com/burhanuddink/Sea-Animal-Classification-Deep-Learning.git](https://github.com/burhanuddink/Sea-Animal-Classification-Deep-Learning.git)
+cd Sea-Animal-Classification-Deep-Learning
+```
+2. Install dependencies: Make sure you have Python 3.11 installed.
 
 ```bash
 pip install -r requirements.txt
 ```
-Run the application:
+
+3. Run the application:
 
 ```bash
 python app.py
 ```
-Open the Interface: The terminal will provide a local URL (usually http://127.0.0.1:7860). Open this link in your browser to start classifying images.
+
+4. Open the Interface: The terminal will provide a URL (usually http://127.0.0.1:7860). Open this link in your browser.
 
 ---
 ## Usage

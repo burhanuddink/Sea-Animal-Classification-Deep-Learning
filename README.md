@@ -77,7 +77,7 @@ Applied during training to improve generalization:
 │   └── technical_report.pdf
 │
 └── README.md
-
+text```
 ---
 
 ## Installation and Requirements

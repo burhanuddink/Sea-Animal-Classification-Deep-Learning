@@ -4,7 +4,6 @@ import numpy as np
 from PIL import Image
 
 # 1. Load the trained model
-# Ensure the model file is in the 'models' folder as discussed
 model_path = "models/COP508FinalEfficientNetBest.keras"
 model = tf.keras.models.load_model(model_path)
 
@@ -20,36 +19,27 @@ def classify_image(image):
     if image is None:
         return None
     
-    # 1. Resize to EfficientNet standard size (224x224)
+    # A. Resize to EfficientNet standard size (224x224)
     image = image.resize((224, 224))
     
-    # 2. Convert to numpy array
+    # B. Convert to numpy array
     img_array = np.array(image)
     
-    # 3. FIX: REMOVE MANUAL RESCALING
-    # The model has a Rescaling(1./255) layer built-in.
-    # We pass raw pixels (0-255).
-    # img_array = img_array.astype("float32") / 255.0  <-- DELETE THIS LINE
+    # C. NO MANUAL NORMALIZATION
+    # We pass raw pixels (0-255) because your model has a Rescaling(1./255) layer.
     
-    # 4. Expand dimensions (1, 224, 224, 3)
+    # D. Expand dimensions to match model input shape (1, 224, 224, 3)
     img_array = np.expand_dims(img_array, axis=0)
     
-    # 5. Make Prediction
+    # E. Make Prediction
     predictions = model.predict(img_array)
     
-    # 6. FIX: HANDLING SOFTMAX
-    # Most Keras models already have softmax in the last layer.
-    # Applying it twice makes high confidence (99%) drop to low confidence (15%).
+    # F. CRITICAL FIX: FORCE SOFTMAX
+    # Your model outputs raw scores (e.g., 13.33). We MUST apply softmax 
+    # to convert them to probabilities (e.g., 0.99 or 99%).
+    scores = tf.nn.softmax(predictions[0])
     
-    # We check: If the sum is close to 1, it's already a probability.
-    if np.sum(predictions[0]) > 1.1: 
-        # It's logits (raw scores), so we apply softmax
-        scores = tf.nn.softmax(predictions[0])
-    else:
-        # It's already probabilities, just use them directly
-        scores = predictions[0]
-    
-    # Return top 3 predictions
+    # Return top 3 predictions for the UI
     return {class_names[i]: float(scores[i]) for i in range(len(class_names))}
 
 # 4. Build the Gradio Interface
@@ -59,7 +49,7 @@ interface = gr.Interface(
     outputs=gr.Label(num_top_classes=3, label="Predictions"),
     title="🌊 Marine Species Classifier",
     description="Upload an image to classify it into one of 16 marine species using EfficientNetB0.",
-    examples=[] # You can add specific image paths here later if you want
+    examples=[] 
 )
 
 # 5. Launch the App

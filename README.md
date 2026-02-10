@@ -66,16 +66,18 @@ Applied during training to improve generalization:
 ```text
 .
 ├── notebooks/
-│   ├── training_pipeline.ipynb
-│   ├── tta_evaluation.ipynb
-│   └── results_analysis.ipynb
+│   ├── Part_1_Training_Pipeline.ipynb
+│   ├── Part_2_Evaluation_and_TTA.ipynb
+│   └── Part_3_Visualizations_and_Analysis.ipynb
 │
 ├── models/
-│   └── marine_species_classifier.keras
+│   └── COP508FinalEfficientNetBest.keras
 │
 ├── docs/
-│   └── technical_report.pdf
+│   └── Technical_Project_Report.docx
 │
+├── app.py
+├── requirements.txt
 └── README.md
 ```
 ---

@@ -94,8 +94,8 @@ pip install tensorflow numpy pandas matplotlib seaborn scikit-learn opencv-pytho
 ## Usage
 
 1. Clone the repository:
-   ```bash
-git clone https://github.com/your-username/marine-species-classification.git
+```bash
+git clone https://github.com/burhanuddink/Sea-Animal-Classification-Deep-Learning.git
 ```
 2. Navigate to the project directory:
 ```bash

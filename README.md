@@ -91,6 +91,20 @@ pip install tensorflow numpy pandas matplotlib seaborn scikit-learn opencv-pytho
 ```
 ---
 
+## Usage
+
+1. Clone the repository:
+```bash
+git clone https://github.com/burhanuddink/Sea-Animal-Classification-Deep-Learning.git
+```
+2. Navigate to the project directory:
+```bash
+cd Sea-Animal-Classification-Deep-Learning
+```
+3. Execute the Jupyter notebooks in the notebooks/ directory sequentially to train the model, perform test-time augmentation evaluation, and analyze results.---
+
+---
+
 ## Real-Time Demo
 
 This project includes a fully functional web interface built with **Gradio**. You can upload any image of a sea animal, and the EfficientNet model will classify it in real-time.
@@ -129,19 +143,6 @@ python app.py
 ```
 
 4. Open the Interface: The terminal will provide a URL (usually http://127.0.0.1:7860). Open this link in your browser.
-
----
-## Usage
-
-1. Clone the repository:
-```bash
-git clone https://github.com/burhanuddink/Sea-Animal-Classification-Deep-Learning.git
-```
-2. Navigate to the project directory:
-```bash
-cd Sea-Animal-Classification-Deep-Learning
-```
-3. Execute the Jupyter notebooks in the notebooks/ directory sequentially to train the model, perform test-time augmentation evaluation, and analyze results.
 
 ---
 

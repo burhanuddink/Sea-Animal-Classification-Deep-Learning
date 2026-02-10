@@ -99,7 +99,7 @@ git clone https://github.com/burhanuddink/Sea-Animal-Classification-Deep-Learnin
 ```
 2. Navigate to the project directory:
 ```bash
-cd marine-species-classification
+cd Sea-Animal-Classification-Deep-Learning
 ```
 3. Execute the Jupyter notebooks in the notebooks/ directory sequentially to train the model, perform test-time augmentation evaluation, and analyze results.
 

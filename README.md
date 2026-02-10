@@ -1,29 +1,79 @@
-# Sea Animal Classification using Deep Learning (EfficientNetB0)
+# Marine Species Identification Using EfficientNetB0 and Test-Time Augmentation
 
-### 🚀 Project Overview
-This project focuses on the development of a high-precision visual classification system designed to identify marine species across **16 different categories**. The dataset presents a wide taxonomic range, encompassing everything from simple invertebrates like **Corals and Starfish** to complex mammals like **Dolphins and Whales**.
+## Project Overview
+This project implements a deep learning pipeline for **visual classification of marine species** across **16 taxonomic categories**. The objective is to support marine biological surveys by enabling accurate species identification in challenging underwater environments.
 
-The primary objective was to leverage **Transfer Learning** architectures to solve intricate computer vision challenges, ensuring the model generalizes effectively across varied and complex marine environments.
+The model classifies a wide range of marine life, from invertebrates such as **Corals** and **Starfish** to large marine mammals including **Dolphins** and **Whales**, using transfer learning and inference-time optimization techniques.
 
-### 🛠️ Technical Methodology
-Instead of training a model from scratch, this implementation utilizes the **EfficientNetB0** architecture, pre-trained on ImageNet. This approach was chosen for its optimal balance between parameter efficiency and classification accuracy.
+---
 
-**Key Implementation Details:**
-* **Architectural Optimization:** Integrated a custom head consisting of **Global Average Pooling**, followed by Dense layers with **ReLU activation** and a final **Softmax** output for the 16 marine classes.
-* **Regularization Strategy:** To mitigate overfitting and improve robust performance, **L2 Regularization** and **Dropout layers** were strategically implemented within the training pipeline.
-* **Inference Enhancement:** Employed **Test-Time Augmentation (TTA)** during the evaluation phase, allowing the model to aggregate predictions from multiple augmented versions of test images to ensure higher reliability.
-* **Dynamic Learning:** Utilized `ReduceLROnPlateau` and `EarlyStopping` callbacks to monitor validation loss and prevent model divergence during the 20-epoch training cycle.
+## Technical Methodology
 
-### 📊 Evaluation & Results
-* **High-Precision Classification:** Achieved superior accuracy by fine-tuning the model's top layers and optimizing hyperparameters.
-* **Data Robustness:** Engineered a preprocessing pipeline to standardize RGB image inputs, ensuring the model remains resilient to variations in lighting and orientation found in real-world visual scenarios.
+### Model Architecture
+- **Base Model:** EfficientNetB0 pre-trained on ImageNet  
+- Selected for its strong trade-off between **computational efficiency** and **classification accuracy**
 
-### 📂 Repository Structure
-* **`notebooks/`**: Contains the full pipeline—from data augmentation and training to TTA evaluation and confusion matrix analysis.
-* **`models/`**: Includes the final saved `.keras` model file.
-* **`docs/`**: Features the comprehensive technical report detailing the research and experimental findings.
+### Custom Classification Head
+- Global Average Pooling layer  
+- Dense layer with **512 units** and ReLU activation  
+- **L2 regularization** for weight penalization  
+- **Dropout (0.4)** to reduce overfitting  
+- Final **Softmax layer** for 16-class prediction  
 
-### ⚙️ Environment Setup
-To replicate the results, install the necessary dependencies:
-```bash
-pip install tensorflow numpy pandas matplotlib seaborn scikit-learn opencv-python
+### Optimization and Training
+- **Optimizer:** Adam  
+- **Callbacks Used:**
+  - EarlyStopping (monitored on validation loss)
+  - ReduceLROnPlateau for dynamic learning rate adjustment
+
+### Inference Strategy: Test-Time Augmentation (TTA)
+During evaluation, predictions are generated from multiple augmented versions of each test image. The final prediction is obtained by aggregating these outputs, improving robustness and prediction stability.
+
+---
+
+## Dataset and Preprocessing
+
+### Dataset
+- RGB images spanning **16 marine species categories**
+
+### Data Augmentation
+Applied during training to improve generalization:
+- Random rotations
+- Horizontal flipping
+- Zoom transformations
+
+### Input Standardization
+- Images resized to a fixed resolution  
+- Pixel values rescaled for compatibility with EfficientNetB0  
+
+---
+
+## Experimental Results
+
+### Classification Performance
+- The fine-tuned model achieved strong accuracy across diverse marine species
+- Demonstrated robustness to orientation and lighting variations
+
+### Evaluation Metrics
+- Confusion matrices
+- Precision, recall, and F1-score via classification reports
+- Per-class performance analysis
+
+---
+
+## Repository Structure
+
+```text
+.
+├── notebooks/
+│   ├── training_pipeline.ipynb
+│   ├── tta_evaluation.ipynb
+│   └── results_analysis.ipynb
+│
+├── models/
+│   └── marine_species_classifier.keras
+│
+├── docs/
+│   └── technical_report.pdf
+│
+└── README.md

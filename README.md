@@ -1,4 +1,15 @@
-# Marine Species Identification Using EfficientNetB0 and Test-Time Augmentation
+# 🐠 Marine Species Identification & Classification
+
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/burhanuddink/sea-animal-classifier)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15-orange.svg)](https://www.tensorflow.org/)
+
+## Live Demo
+**Click the link below to try the model instantly:**
+
+👉 **[Launch Sea Animal Classifier App](https://huggingface.co/spaces/burhanuddink/sea-animal-classifier)**
+
+---
 
 ## Project Overview
 This project implements a deep learning pipeline for **visual classification of marine species** across **16 taxonomic categories**. The objective is to support marine biological surveys by enabling accurate species identification in challenging underwater environments.

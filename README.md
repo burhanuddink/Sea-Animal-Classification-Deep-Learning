@@ -1,4 +1,4 @@
-# 🐠 Marine Species Identification & Classification
+# Marine Species Identification & Classification
 
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/burhanuddink/sea-animal-classifier)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
